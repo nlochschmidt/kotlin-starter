@@ -1,0 +1,42 @@
+buildscript {
+    ext {
+        joobyVersion = '1.1.1'
+        kotlin_version = '1.1.2-3'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jooby:jooby-gradle-plugin:$joobyVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+/* * We are writing a standalone application. */
+apply plugin: 'application'
+apply plugin: 'kotlin'
+apply plugin: 'jooby'
+
+/* * Some classic project configuration. */
+version = 0.1
+mainClassName = "starter.kotlin.AppKt"
+sourceCompatibility = 1.8
+
+/* * Dependencies will be downloaded from the Maven repository. */
+repositories {
+    mavenCentral()
+}
+
+/* * A minimal project needs the framework and a webserver. */
+dependencies {
+    compile group: 'org.jooby', name: 'jooby', version: '1.1.1'
+    compile group: 'org.jooby', name: 'jooby-netty', version: '1.1.1'
+    compile group: 'org.jooby', name: 'jooby-lang-kotlin', version: '1.1.1'
+}
+
+/* * We diverge from the default resources structure to adopt the Jooby standard. */
+sourceSets.main.resources {
+    srcDirs = ["conf", "public"]
+}

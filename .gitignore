@@ -20,3 +20,7 @@ bin
 *.versionsBackup
 pom.xml.versionsBackup
 jacoco.exec
+
+# Gradle #
+.gradle
+/build/
