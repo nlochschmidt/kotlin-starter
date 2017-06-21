@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
 
 ## run
 
-    mvn jooby:run
+    ./gradlew joobyRun
 
 ## help
 
