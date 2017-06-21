@@ -1,11 +1,12 @@
 buildscript {
     ext {
-        joobyVersion = '1.1.1'
+        joobyVersion = '1.2.0-SNAPSHOT'
         kotlin_version = '1.1.2-3'
     }
 
     repositories {
         mavenCentral()
+        mavenLocal()
     }
 
     dependencies {
@@ -27,6 +28,7 @@ sourceCompatibility = 1.8
 /* * Dependencies will be downloaded from the Maven repository. */
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 /* * A minimal project needs the framework and a webserver. */
